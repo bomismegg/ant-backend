@@ -54,7 +54,24 @@ const propertySchema = new Schema({
         required: true
     },
     // Host reference
-    images: [String]
+    images: [String],
+    bedrooms: {
+        type: Number,
+        required: true
+    },  
+    bathrooms: {
+        type: Number,
+        required: true
+    },  
+    isAvailable: {
+        type: Boolean,
+        default: true
+    },
+    maxGuests: {
+        type: Number,
+        required: true,
+        default: 1
+    },  
 }, {
     timestamps: true,
     collection: COLLECTION_NAME

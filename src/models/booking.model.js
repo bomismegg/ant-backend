@@ -36,6 +36,21 @@ const bookingSchema = new Schema({
                 'completed',
                 'canceled'
             ]
+    },
+    guestCount: {
+        type: Number,
+        required: true,
+        default: 1
+    },
+    paymentStatus: {
+        type: String,
+        default: 'pending',  // Other values: 'paid', 'failed', etc.
+        enum: ['pending', 'paid', 'failed']
+    },
+    paymentMethod: {
+        type: String,
+        default: 'credit_card',  // Could be 'credit_card', 'paypal', etc.
+        enum: ['credit_card', 'paypal', 'bank_transfer']
     }
 }, {
     timestamps: true,
